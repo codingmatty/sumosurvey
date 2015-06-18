@@ -19,7 +19,8 @@
       <div class="input-group">
         <input type="text" class="form-control" ng-model="formVm.newOption.text" placeholder="New Option"/>
         <span class="input-group-btn">
-          <button type="button" class="btn btn-primary" ng-click="formVm.addOption(formVm.newOption)">Add</button>
+          <button type="button" class="btn btn-primary" ng-click="formVm.addOption(formVm.newOption)"
+            ng-disabled="formVm.newOption.text.length === 0">Add</button>
         </span>
       </div>
     </div>
