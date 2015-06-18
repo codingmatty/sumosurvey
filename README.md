@@ -65,9 +65,9 @@ Simple, self-hostable survey platform
 
 ## Changelog
 
-See [CHANGELOG](CHANGELOG.md) for details.
+See [CHANGELOG](CHANGELOG) for details.
 
 ## License
 
 Copyright (c) 2015 Matthew Jacobs.
-See [LICENSE](LICENSE.md) for details.
+See [LICENSE](LICENSE) for details.
