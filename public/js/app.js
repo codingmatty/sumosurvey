@@ -50,7 +50,7 @@ angular.module('SumoSurvey', [
       loggedin: checkLoggedin
     }
   })
-    .when('/admin/form', {
+    .when('/admin/form/:survey_id?', {
     templateUrl: 'partials/form.html',
     // controller: 'FormController',
     resolve: {

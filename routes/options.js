@@ -3,7 +3,7 @@ var express = require('express');
 var router  = express.Router();
 var auth = require('../auth');
 
-router.delete('/:option_id/delete', auth.isAuthenticated, function (req, res) {
+router.delete('/:option_id', auth.isAuthenticated, function (req, res) {
   models.Option.destroy({
     where: { id: req.params.option_id }
   }).then(function(affectedRows) {

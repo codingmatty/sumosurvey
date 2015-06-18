@@ -41,6 +41,7 @@ Simple, self-hostable survey platform
  * Options - which will hold the option text as well as the amount of 'votes' it has received
 * Admin password is cleartext.
 * Passport will be used to authenticate Admin.
+* Cookies are used to display randomly unique question to user.
 
 ## Getting Started
 
@@ -62,3 +63,33 @@ Simple, self-hostable survey platform
 * Change MySQL username and password in [config/config.json](config/config.json)
 * `node bin/www`
 * Open browser window to http://localhost:3000/
+
+## Application
+
+#### Url Routes:
+* / - displays random survey question.
+* /login - log in to admin interface.
+* /admin/list - lists surveys with results.
+* /admin/form - form to create new survey.
+* /admin/form/:survey_id - form to edit existing survey.
+
+#### API Routes
+
+* Admin:
+ * POST /api/admin/login {username, password}
+ * POST /api/admin/logout
+* Surveys:
+ * GET /api/surveys/random
+ * *Admin Authentication Required for the following:*
+ * GET /api/surveys
+ * POST /api/surveys {question_text, Options[{text}]}
+ * GET /api/surveys/count
+ * GET /api/surveys/:survey_id
+ * PUT /api/surveys/:survey_id {question_text, Options[{text}]}
+ * POST /api/surveys/:survey_id {question_text, Options[{text}]}
+ * DELETE /api/surveys/:survey_id
+* Options:
+ * POST /api/options/:option_id/answer
+ * *Admin Authentication Required for the following:*
+ * DELETE /api/options/:option_id
+ 

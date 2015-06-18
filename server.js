@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var FileStore = require('session-file-store')(session);
 var passport = require('passport');
 var auth = require('./auth');
 var debug = require('debug')('main');
@@ -27,28 +28,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 app.use(session({
+    store: new FileStore(options),
+    name: 'sessionId',
     secret: 'sumosecret',
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false,
+    rolling: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(cookieParser());
+
+
 app.get('/', routes.index);
 app.get('/login', routes.index);
-app.get('/loggedin', function(req, res) {
-    debug(req.session);
-    if (req.isAuthenticated()) {
-        res.json({authenticated: true});
-    } else {
-        res.sendStatus(401);
-    }
-  
-});
 app.get('/admin/*', routes.index);
+app.get('/loggedin', routes.loggedin);
 app.get('/partials/:name', routes.partials);
 
 app.use('/api/admin', admin);

@@ -1,9 +1,12 @@
 <div ng-controller="LoginController as loginVm" class="main-view panel panel-primary">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">Log In</h3>
+        <h3 class="panel-title">Log In</h3>
     </div>
     <form class="form" novalidate>
         <div class="panel-body text-center">
+            <div class="alert alert-danger" role="alert" ng-show="loginVm.message">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>{{loginVm.message}}</div>
             <div>
                 <label for="username">Username:</label>
                 <input type="text" name="username" ng-model="loginVm.form.username" />
@@ -15,7 +18,7 @@
         </div>
         <div class="panel-footer text-center">
             <div>
-                <input type="submit" class="btn btn-primary" value="Log In" ng-click="loginVm.submitLogin(loginVm.form)"/>
+                <input type="submit" class="btn btn-primary" value="Log In" ng-click="loginVm.submitLogin(loginVm.form)" />
             </div>
         </div>
     </form>

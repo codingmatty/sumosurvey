@@ -27,3 +27,11 @@
  .well {
 	 margin-top: 5px; 
  }
+ 
+ .form-view .panel-body {
+	 max-width: 500px; 
+	 width: 100%;
+ }
+ .form-view .panel-body .row {
+	 margin-bottom: 5px;
+ }

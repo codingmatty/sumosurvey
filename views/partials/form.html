@@ -1,21 +1,30 @@
-<div ng-controller="FormController as formVm" class="main-view panel panel-primary">
-  <!--<div class="panel-heading">
-    
-  </div>-->
-  <div class="panel-body">
+<div ng-controller="FormController as formVm" class="form-view main-view panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="text-center">Survey Question Form</h3>
+  </div>
+  <div class="panel-body center-block">
     <div class="row">
-      <textarea ng-model="formVm.survey.question_text"></textarea>
+      <textarea class="form-control" ng-model="formVm.survey.question_text" placeholder="Question Text"></textarea>
     </div>
+    <hr />
     <div class="row" ng-repeat="option in formVm.survey.Options">
-      <input type="text" ng-model="option.text" />
-      <button class="btn btn-primary" ng-click="formVm.removeOption(option)">Remove</button>
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="option.text" placeholder="Existing Option"/>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" ng-click="formVm.removeOption(formVm.survey, option)">Remove</button>
+        </span>
+      </div>
     </div>
     <div class="row">
-      <input type="text" ng-model="formVm.newOption.text" />
-      <button type="button" class="btn btn-primary" ng-click="formVm.addOption(formVm.newOption)">Add</button>
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="formVm.newOption.text" placeholder="New Option"/>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-primary" ng-click="formVm.addOption(formVm.newOption)">Add</button>
+        </span>
+      </div>
     </div>
   </div>
-  <div class="panel-footer">
-    <button type="button" class="btn btn-primary" ng-click="formVm.submitSurvey(formVm.survey, formVm.selectedOption)">Submit</button>
+  <div class="panel-footer text-center">
+    <button type="button" class="btn btn-primary" ng-click="formVm.submitSurvey(formVm.survey, formVm.selectedOption)" ng-disabled="formVm.survey.question_text.length === 0 || formVm.survey.Options.length === 0">Submit</button>
   </div>
 </div>
