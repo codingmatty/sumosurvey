@@ -3,12 +3,11 @@
 var debug = require('debug')('express-example');
 var app = require('../server');
 var models = require("../models");
+var config = require("../config/config.json");
 
 app.set('port', process.env.PORT || 3000);
 
-/// CHANGE ADMIN PASSWORD HERE.
-var passwordToUse = 'ilovetacos';
-/// ///
+var passwordToUse = config.admin_password;
 
 models.sequelize.sync().then(function () {
   models.Admin.findOrCreate({

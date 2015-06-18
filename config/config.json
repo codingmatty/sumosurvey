@@ -1,23 +1,26 @@
 {
-  "development": {
-    "username": "sumosurvey",
-    "password": "sumosurveypass",
-    "database": "sumosurvey_dev",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "sumosurvey_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "sumosurvey",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+  "admin_password": "ihatetacos",
+  "db": {
+    "development": {
+      "username": "sumosurvey",
+      "password": "sumosurveypass",
+      "database": "sumosurvey_dev",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "sumosurvey_test",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": null,
+      "database": "sumosurvey",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
   }
 }
