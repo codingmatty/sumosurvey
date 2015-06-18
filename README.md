@@ -93,3 +93,11 @@ Simple, self-hostable survey platform
  * *Admin Authentication Required for the following:*
  * DELETE /api/options/:option_id
  
+## Changelog
+
+See [CHANGELOG](CHANGELOG) for details.
+
+## License
+
+Copyright (c) 2015 Matthew Jacobs.
+See [LICENSE](LICENSE) for details.
