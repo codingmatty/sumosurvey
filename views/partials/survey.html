@@ -1,0 +1,22 @@
+<div ng-controller="SurveyController as surveyVm" class="main-view panel panel-primary">
+  <div ng-show="surveyVm.currentQuestion">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{surveyVm.currentQuestion.question_text}}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="" ng-repeat="option in surveyVm.currentQuestion.Options">
+        <label>
+          <input type="radio" ng-model="surveyVm.selectedOption" ng-value="option" />{{option.text}}</label>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <button class="btn btn-primary" ng-click="surveyVm.submitAnswer(surveyVm.currentQuestion, surveyVm.selectedOption)">Submit</button>
+    </div>
+  </div>
+  <div ng-show="!surveyVm.currentQuestion">
+    <div class="panel-body">
+      <h2>There are no more questions at this time.<br/>Please check back again later to answer more!</h2>
+      <h6>If you are the Admin, create more questions by logging in <a href="/login">here</a></h6>
+    </div>
+  </div>
+</div>

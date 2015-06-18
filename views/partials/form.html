@@ -1,0 +1,21 @@
+<div ng-controller="FormController as formVm" class="main-view panel panel-primary">
+  <!--<div class="panel-heading">
+    
+  </div>-->
+  <div class="panel-body">
+    <div class="row">
+      <textarea ng-model="formVm.survey.question_text"></textarea>
+    </div>
+    <div class="row" ng-repeat="option in formVm.survey.Options">
+      <input type="text" ng-model="option.text" />
+      <button class="btn btn-primary" ng-click="formVm.removeOption(option)">Remove</button>
+    </div>
+    <div class="row">
+      <input type="text" ng-model="formVm.newOption.text" />
+      <button type="button" class="btn btn-primary" ng-click="formVm.addOption(formVm.newOption)">Add</button>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <button type="button" class="btn btn-primary" ng-click="formVm.submitSurvey(formVm.survey, formVm.selectedOption)">Submit</button>
+  </div>
+</div>

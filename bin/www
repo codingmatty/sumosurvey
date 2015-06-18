@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+var debug = require('debug')('express-example');
+var app = require('../server');
+var models = require("../models");
+
+app.set('port', process.env.PORT || 3000);
+
+/// CHANGE ADMIN PASSWORD HERE.
+var passwordToUse = 'ilovetacos';
+/// ///
+
+models.sequelize.sync().then(function () {
+  models.Admin.findOrCreate({
+    where: {username:'admin'},
+    defaults: {
+      username: 'admin',
+      password: passwordToUse
+    }
+  }).spread(function(admin, created) {
+    if (!created) {
+      admin.updateAttributes({password: passwordToUse});
+    }
+    var server = app.listen(app.get('port'), function() {
+      debug('Express server listening on port ' + server.address().port);
+    });
+  });
+});

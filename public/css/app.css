@@ -1,0 +1,29 @@
+.main-view {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.survey-list-btn {
+	display: block;
+	width: 33.33%;
+}
+
+.progress {
+    position: relative;
+	background-color: lightgoldenrodyellow;
+}
+
+.progress-bar {
+	background-color: lightsteelblue;
+}
+
+.progress span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    color: #3d3d3d;
+ }
+ 
+ .well {
+	 margin-top: 5px; 
+ }
