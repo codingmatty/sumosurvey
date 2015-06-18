@@ -62,3 +62,12 @@ Simple, self-hostable survey platform
 * Change MySQL username and password in [config/config.json](config/config.json)
 * `node bin/www`
 * Open browser window to http://localhost:3000/
+
+## Changelog
+
+See [CHANGELOG](CHANGELOG.md) for details.
+
+## License
+
+Copyright (c) 2015 Matthew Jacobs.
+See [LICENSE](LICENSE.md) for details.
