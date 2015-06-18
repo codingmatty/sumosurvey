@@ -54,4 +54,6 @@
  * `CREATE DATABASE sumosurvey_dev;`
  * `CREATE USER 'sumosurvey'@'localhost' IDENTIFIED BY 'sumosurveypass';`
  * `GRANT ALL PRIVILEGES ON sumosurvey_dev . * TO 'sumosurvey'@'localhost';`
-* change MySQL username and password in [config/config.json](config/config.json)
+* Change MySQL username and password in [config/config.json](config/config.json)
+* `node bin/www`
+* Open browser window to http://localhost:3000/
