@@ -49,5 +49,9 @@
 * `git clone https://github.com/swengmatt/sumosurvey.git`
 * `cd sumosurvey`
 * `npm install`
-* setup MySQL db `CREATE DATABASE sumosurvey_dev`
+* Setup MySQL:
+ * `mysql -u root -p`
+ * `CREATE DATABASE sumosurvey_dev;`
+ * `CREATE USER 'sumosurvey'@'localhost' IDENTIFIED BY 'sumosurveypass';`
+ * `GRANT ALL PRIVILEGES ON sumosurvey_dev . * TO 'sumosurvey'@'localhost';`
 * change MySQL username and password in [config/config.json](config/config.json)
