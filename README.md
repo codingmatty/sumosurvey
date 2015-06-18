@@ -60,8 +60,9 @@ Simple, self-hostable survey platform
  * `CREATE DATABASE sumosurvey_dev;`
  * `CREATE USER 'sumosurvey'@'localhost' IDENTIFIED BY 'sumosurveypass';`
  * `GRANT ALL PRIVILEGES ON sumosurvey_dev . * TO 'sumosurvey'@'localhost';`
-* Change MySQL username and password in [config/config.json](config/config.json)
+* Change MySQL username and password in development (default) database configuration [config/config.json](config/config.json)
 * `node bin/www`
+* Optional: change admin password in [config/config.json](config/config.json)
 * Open browser window to http://localhost:3000/
 
 ## Application
