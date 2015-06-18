@@ -69,6 +69,7 @@ Simple, self-hostable survey platform
 #### Url Routes:
 * / - displays random survey question.
 * /login - log in to admin interface.
+* **Admin Authentication Required for the following:**
 * /admin/list - lists surveys with results.
 * /admin/form - form to create new survey.
 * /admin/form/:survey_id - form to edit existing survey.
@@ -80,7 +81,7 @@ Simple, self-hostable survey platform
  * POST /api/admin/logout
 * Surveys:
  * GET /api/surveys/random
- * *Admin Authentication Required for the following:*
+ * **Admin Authentication Required for the following:**
  * GET /api/surveys
  * POST /api/surveys {question_text, Options[{text}]}
  * GET /api/surveys/count
@@ -90,7 +91,7 @@ Simple, self-hostable survey platform
  * DELETE /api/surveys/:survey_id
 * Options:
  * POST /api/options/:option_id/answer
- * *Admin Authentication Required for the following:*
+ * **Admin Authentication Required for the following:**
  * DELETE /api/options/:option_id
  
 ## Changelog
