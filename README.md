@@ -23,6 +23,7 @@
 
 * There will only be one admin.
 * Users will not have to log in.
+* Users will no be able to see the results of any surveys.
 * You will only be able to change the admin password from server configuration.
 * Cookies will be used to determine what questions a user has answered.
 
