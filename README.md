@@ -23,6 +23,7 @@
 
 * There will only be one admin.
 * Users will not have to log in.
+* Users will no be able to see the results of any surveys.
 * You will only be able to change the admin password from server configuration.
 * Cookies will be used to determine what questions a user has answered.
 
@@ -46,7 +47,11 @@
 #### Setup
 
 * `git clone https://github.com/swengmatt/sumosurvey.git`
-* `cd sumosurvey.git`
+* `cd sumosurvey`
 * `npm install`
-* setup MySQL db `CREATE DATABASE sumosurvey_dev`
+* Setup MySQL:
+ * `mysql -u root -p`
+ * `CREATE DATABASE sumosurvey_dev;`
+ * `CREATE USER 'sumosurvey'@'localhost' IDENTIFIED BY 'sumosurveypass';`
+ * `GRANT ALL PRIVILEGES ON sumosurvey_dev . * TO 'sumosurvey'@'localhost';`
 * change MySQL username and password in [config/config.json](config/config.json)
