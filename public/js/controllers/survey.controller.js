@@ -16,8 +16,9 @@ angular.module('SumoSurvey').controller('SurveyController', ['SurveyService', 'O
 	surveyVm.submitAnswer = function(questionAnswered, answer) {
 		OptionService.answerOption(answer, function() {
 			questionsAnswered.push(questionAnswered.id);
-			$cookies.remove('questionsAnswered');
-			$cookies.putObject('questionsAnswered', questionsAnswered);
+			var today = new Date(Date.now());
+			var expiration = new Date(today.getFullYear() + 1, today.getMonth());
+			$cookies.putObject('questionsAnswered', questionsAnswered, {path: '/api/surveys/random', expires: expiration});
 			
 			fetchSurvey();
 		});
