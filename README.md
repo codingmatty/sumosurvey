@@ -3,7 +3,7 @@
 ## Summary
 
 Simple, self-hostable survey platform
-######Check out the [DEMO](http://demo.majacobs.net).
+######Check out the ~~DEMO~~
 * Login credentials:
  * username: admin
  * password: ilovetacos
