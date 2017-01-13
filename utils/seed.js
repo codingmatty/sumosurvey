@@ -26,9 +26,9 @@ module.exports = function seed() {
   });
 
   debug('Seeding Survey Data');
-  Survey.findAll().then(function (surveys) {
-    debug('Survey Count: ' + surveys.length);
-    if (!surveys.length) {
+  Survey.count().then(function (surveyCount) {
+    debug('Survey Count: ' + surveyCount);
+    if (surveyCount === 0) {
       addSurveys();
     }
   });

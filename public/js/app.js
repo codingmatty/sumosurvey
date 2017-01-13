@@ -39,13 +39,10 @@ angular.module('SumoSurvey', [
     function ($routeProvider, $locationProvider, $httpProvider, RestangularProvider) {
       $routeProvider
         .when('/', {
-          templateUrl: 'partials/survey.html',
-          resolve: {
-            loggedIn: checkLoggedin
-          }
+          templateUrl: 'partials/survey.html'
         })
         .when('/login', {
-          templateUrl: 'partials/login.html',
+          templateUrl: 'partials/login.html'
         })
         .when('/admin/list', {
           templateUrl: 'partials/list.html',
