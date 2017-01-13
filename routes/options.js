@@ -25,6 +25,11 @@ router
       option.updateAttributes({
         answer_count: option.answer_count + 1
       }).then(function () {
+        var surveysAnswered = req.session.surveysAnswered;
+        if (!surveysAnswered) {
+          surveysAnswered = req.session.surveysAnswered = [];
+        }
+        surveysAnswered.push(option.SurveyId);
         res.json({ message: 'Success!' });
       });
     });

@@ -30,7 +30,6 @@ var checkLoggedin = ['$q', '$http', '$location', 'AdminService',
   }];
 
 angular.module('SumoSurvey', [
-  'ngCookies',
   'ngRoute',
   'ngTouch',
   'restangular'

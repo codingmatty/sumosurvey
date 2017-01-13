@@ -32,7 +32,8 @@ function createServerApp() {
   app.use(session({
     secret: 'sumosecret',
     store: new SequelizeStore({
-      db: sequelize
+      db: sequelize,
+      expiration: 1000 * 60 * 60 * 24 * 365 // the session will last a year in the db
     }),
     resave: false,
     saveUninitialized: true

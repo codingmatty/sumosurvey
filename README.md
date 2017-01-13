@@ -30,7 +30,6 @@ Simple, self-hostable survey platform
 * Users will not have to log in.
 * Users will no be able to see the results of any surveys.
 * You will only be able to change the admin password from server configuration.
-* Cookies will be used to determine what questions a user has answered.
 
 #### Decisions
 
@@ -41,8 +40,7 @@ Simple, self-hostable survey platform
   * Options - which will hold the option text as well as the amount of 'votes' it has received
 * Admin password is hashed.
 * Passport will be used to authenticate Admin.
-* Cookies are used to display randomly unique question to user.
-* Cookies will store logged in admin info, using session stored in db.
+* Sessions stored in the db for up to a year will be used to determine what questions a user has answered.
 
 ## Getting Started
 

@@ -1,6 +1,6 @@
 angular.module('SumoSurvey')
-	.controller('LoginController', ['AdminService', '$cookies', '$location',
-		function (AdminService, $cookies, $location) {
+	.controller('LoginController', ['AdminService', '$location',
+		function (AdminService, $location) {
 			var loginVm = this;
 
 			function resetForm(invalidLogin) {

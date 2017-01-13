@@ -48,18 +48,21 @@ router
     });
   })
   .get('/random', function (req, res) {
-    var questionsAnswered = req.cookies.questionsAnswered ?
-      req.cookies.questionsAnswered.slice(1, -1).split(',').map(function (x) { return Number(x); }) : [];
+    var surveysAnswered = req.session.surveysAnswered ?
+      req.session.surveysAnswered.map(function (x) { return parseInt(x); }) : [];
     Survey.findAll({
       include: [Option]
     }).then(function (surveys) {
-      var questionsUnanswered = surveys.filter(function (survey) {
-        return !questionsAnswered.some(function (qAd) { return survey.id === qAd; });
+      var unansweredSurveys = surveys.filter(function (survey) {
+        console.log(surveysAnswered);
+        return !surveysAnswered.some(function (surveyId) {
+          return survey.id === surveyId;
+        });
       });
-      debug('qUnanswered: ' + questionsUnanswered);
-      var randomIdx = Math.round((Math.random() * (questionsUnanswered.length - 1)));
+      debug('qUnanswered: ' + unansweredSurveys);
+      var randomIdx = Math.round((Math.random() * (unansweredSurveys.length - 1)));
       debug('randomIdx: ' + randomIdx);
-      res.json(questionsUnanswered[randomIdx]);
+      res.json(unansweredSurveys[randomIdx]);
     });
   })
   .get('/:survey_id', auth.isAuthenticated, function (req, res) {
