@@ -14,7 +14,7 @@ var sequelize = require('./utils/sequelize');
 var seed = require('./utils/seed');
 require('./models'); // init sequelize models
 
-sequelize.sync().then(function () {
+sequelize.sync({ force: true }).then(function () {
   seed();
   var app = createServerApp();
   var server = app.listen(app.get('port'), function () {
