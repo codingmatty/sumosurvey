@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "prestart": "sequelize db:migrate",
     "start": "node server"
   },
   "repository": {
@@ -30,10 +31,8 @@
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
     "sequelize": "^3.2.0",
+    "sequelize-cli": "^1.7.0",
     "session-file-store": "0.0.13"
-  },
-  "devDependencies": {
-    "sequelize-cli": "^1.7.0"
   },
   "engines": {
     "node": "0.10.46"
