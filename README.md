@@ -42,6 +42,7 @@ Simple, self-hostable survey platform
 * Admin password is hashed.
 * Passport will be used to authenticate Admin.
 * Cookies are used to display randomly unique question to user.
+* Cookies will store logged in admin info, using session stored in db.
 
 ## Getting Started
 
