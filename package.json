@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "prestart": "sequelize db:migrate --url ${DB_CONFIG_URL}",
     "start": "node server"
   },
   "repository": {
