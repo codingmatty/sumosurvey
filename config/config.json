@@ -14,11 +14,12 @@
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
+    // These REALLY SHOULD NOT BE IN GIT!!!
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "sumosurvey",
-      "host": "127.0.0.1",
+      "username": "b9f9e1b293d314",
+      "password": "2b6b193f",
+      "database": "heroku_4f8fd9bb635c1ec",
+      "host": "us-cdbr-iron-east-04.cleardb.net",
       "dialect": "mysql"
     }
   }

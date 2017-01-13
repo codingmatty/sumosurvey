@@ -3,7 +3,7 @@
 ## Summary
 
 Simple, self-hostable survey platform
-######Check out the ~~DEMO~~
+######Check out the [DEMO](https://sumosurvey.herokuapp.com/)
 * Login credentials:
  * username: admin
  * password: ilovetacos
