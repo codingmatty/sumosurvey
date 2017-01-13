@@ -1,31 +1,28 @@
 'use strict';
+var fs = require('fs');
+var path = require('path');
+var basename = path.basename(module.filename);
+var sequelize = require('../utils/sequelize');
 
-var fs        = require('fs');
-var path      = require('path');
-var Sequelize = require('sequelize');
-var basename  = path.basename(module.filename);
-var env       = process.env.NODE_ENV || 'development';
-var db_config    = require(__dirname + '/../config/config.json').db[env];
-var sequelize = new Sequelize(db_config.database, db_config.username, db_config.password, db_config);
-var db        = {};
+
+var models = {};
 
 fs
   .readdirSync(__dirname)
-  .filter(function(file) {
+  .filter(function (file) {
     return (file.indexOf('.') !== 0) && (file !== basename);
   })
-  .forEach(function(file) {
-    var model = sequelize['import'](path.join(__dirname, file));
-    db[model.name] = model;
+  .forEach(function (file) {
+    var model = sequelize.import(path.join(__dirname, file));
+    models[model.name] = model;
   });
 
-Object.keys(db).forEach(function(modelName) {
-  if ('associate' in db[modelName]) {
-    db[modelName].associate(db);
+Object.keys(models).forEach(function (modelName) {
+  if ('associate' in models[modelName]) {
+    models[modelName].associate(models);
   }
 });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+models.sequelize = sequelize;
 
-module.exports = db;
+module.exports = models;

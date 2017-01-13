@@ -6,7 +6,8 @@
     <div class="panel-body">
       <div class="" ng-repeat="option in surveyVm.currentQuestion.Options">
         <label>
-          <input type="radio" ng-model="surveyVm.selectedOption" ng-value="option" />{{option.text}}</label>
+          <input type="radio" ng-model="surveyVm.selectedOption" ng-value="option" />&nbsp;&nbsp;{{option.text}}
+        </label>
       </div>
     </div>
     <div class="panel-footer">

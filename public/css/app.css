@@ -1,20 +1,20 @@
 .main-view {
-	margin-left: 10%;
-	margin-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .survey-list-btn {
-	display: block;
-	width: 33.33%;
+  display: block;
+  width: 33.33%;
 }
 
 .progress {
-    position: relative;
-	background-color: lightgoldenrodyellow;
+  position: relative;
+  background-color: lightgoldenrodyellow;
 }
 
 .progress-bar {
-	background-color: lightsteelblue;
+  background-color: lightsteelblue;
 }
 
 .progress span {
@@ -23,15 +23,15 @@
     width: 100%;
     color: #3d3d3d;
  }
- 
+
  .well {
-	 margin-top: 5px; 
+   margin-top: 5px;
  }
- 
+
  .form-view .panel-body {
-	 max-width: 500px; 
-	 width: 100%;
+   max-width: 500px;
+   width: 100%;
  }
  .form-view .panel-body .row {
-	 margin-bottom: 5px;
+   margin-bottom: 5px;
  }

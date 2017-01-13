@@ -1,5 +1,4 @@
 {
-  "admin_password": "ilovetacos",
   "db": {
     "development": {
       "username": "sumosurvey",

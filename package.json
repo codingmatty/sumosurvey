@@ -1,24 +1,26 @@
 {
   "name": "sumosurvey",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swengmatt/sumosurvey.git"
+    "url": "git+https://github.com/mattjdev/sumosurvey.git"
   },
   "author": "Matthew Jacobs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/swengmatt/sumosurvey/issues"
+    "url": "https://github.com/mattjdev/sumosurvey/issues"
   },
-  "homepage": "https://github.com/swengmatt/sumosurvey#readme",
+  "homepage": "https://github.com/mattjdev/sumosurvey#readme",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.13.0",
     "cookie-parser": "^1.3.5",
+    "connect-session-sequelize": "^4.1.0",
     "debug": "^2.2.0",
     "ejs": "^2.3.1",
     "express": "^4.12.4",

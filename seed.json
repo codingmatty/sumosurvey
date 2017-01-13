@@ -1,0 +1,36 @@
+{
+  "admin_password": "ilovetacos",
+  "surveys": [
+    {
+      "question_text": "What is your favorite food?",
+      "options": [
+        "Burgers",
+        "Pizza",
+        "Tacos!",
+        "Spaghetti",
+        "None of the above"
+      ]
+    },
+    {
+      "question_text": "What is your favorite Social Media platform?",
+      "options": [
+        "Twitter",
+        "Facebook",
+        "Instagram",
+        "Snapchat",
+        "I dislike Social Media"
+      ]
+    },
+    {
+      "question_text": "Where would you rather go next in the world?",
+      "options": [
+        "Mexico",
+        "Denmark",
+        "Brazil",
+        "Thailand",
+        "South Africe",
+        "Somewhere else"
+      ]
+    }
+  ]
+}

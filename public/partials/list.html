@@ -1,0 +1,65 @@
+<div class="main-view" ng-controller="AdminController as adminVm">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <button class="btn btn-primary btn-block" type="button" ng-click="adminVm.newSurvey()">
+        New Survey Question
+      </button>
+    </li>
+    <li class="list-group-item" ng-repeat="survey in adminVm.surveys">
+      <div class="row">
+        <p class="col-xs-12 col-sm-8">{{survey.question_text}}</p>
+        <div class="col-xs-12 col-sm-4 btn-group btn-group-md">
+          <button type="button" class="survey-list-btn btn btn-primary" ng-click="adminVm.toggleResults(survey.id)" ng-class="adminVm.activeButtonClass(survey.id)">
+            Results
+          </button>
+          <button type="button" class="survey-list-btn btn btn-primary" ng-click="adminVm.editSurvey(survey)">
+            Edit
+          </button>
+          <button type="button" class="survey-list-btn btn btn-primary" ng-click="adminVm.deleteSurvey(survey)">
+            Delete
+          </button>
+        </div>
+      </div>
+      <div id="surveyResults-{{survey.id}}" class="well" ng-class="adminVm.collapseResultsClass(survey.id)">
+        <div class="col-xs-12 text-center">{{survey.totalAnswers}} Total Vote(s)</div>
+        <hr class="divider" />
+        <div class="row" ng-repeat="option in survey.Options">
+          <div class="col-xs-12 col-sm-6 text-center">{{option.text}}</div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="{{option.answer_count}}"
+                aria-valuemin="0"
+                aria-valuemax="{{survey.totalAnswers}}"
+                style="width: {{ option.answer_count/survey.totalAnswers * 100 | number: 1 }}%;"
+              >
+                <span>
+                  {{option.answer_count}} vote(s) ({{option.answer_count/survey.totalAnswers * 100 | number: 1}}%)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <nav>
+    <ul class="pagination">
+      <li ng-class="1 === adminVm.currentPage ? 'disabled' : ''">
+        <a href="#" ng-click="adminVm.goToPrevPage()" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li ng-repeat="page in adminVm.pages" ng-class="page === adminVm.currentPage ? 'active' : ''">
+        <a href="#" ng-click="adminVm.goToPage(page)">{{page}}</a>
+      </li>
+      <li ng-class="adminVm.numberOfPages === adminVm.currentPage ? 'disabled' : ''">
+        <a href="#" ng-click="adminVm.goToNextPage()" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

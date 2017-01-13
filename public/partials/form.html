@@ -9,7 +9,7 @@
     <hr />
     <div class="row" ng-repeat="option in formVm.survey.Options">
       <div class="input-group">
-        <input type="text" class="form-control" ng-model="option.text" placeholder="Existing Option"/>
+        <input type="text" class="form-control" ng-model="option.text" placeholder="Existing Option" />
         <span class="input-group-btn">
           <button class="btn btn-primary" ng-click="formVm.removeOption(formVm.survey, option)">Remove</button>
         </span>
@@ -17,7 +17,7 @@
     </div>
     <div class="row">
       <div class="input-group">
-        <input type="text" class="form-control" ng-model="formVm.newOption.text" placeholder="New Option"/>
+        <input type="text" class="form-control" ng-model="formVm.newOption.text" placeholder="New Option" />
         <span class="input-group-btn">
           <button type="button" class="btn btn-primary" ng-click="formVm.addOption(formVm.newOption)"
             ng-disabled="formVm.newOption.text.length === 0">Add</button>
@@ -26,6 +26,11 @@
     </div>
   </div>
   <div class="panel-footer text-center">
-    <button type="button" class="btn btn-primary" ng-click="formVm.submitSurvey(formVm.survey, formVm.selectedOption)" ng-disabled="formVm.survey.question_text.length === 0 || formVm.survey.Options.length === 0">Submit</button>
+    <button type="button" class="btn" ng-click="formVm.cancel(formVm.survey)">
+      Cancel
+    </button>
+    <button type="button" class="btn btn-primary" ng-click="formVm.submitSurvey(formVm.survey, formVm.selectedOption)" ng-disabled="formVm.survey.question_text.length === 0 || formVm.survey.Options.length === 0">
+      Submit
+    </button>
   </div>
 </div>
