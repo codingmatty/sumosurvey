@@ -42,8 +42,20 @@ app.get('/partials/:name', function(req, res) {
 });
 
 app.get('/admin', function (req, res) {
-  res.redirect('/admin/list');
+  if (req.isAuthenticated()) {
+    res.redirect('/admin/list');
+    return;
+  }
+  res.redirect('/login');
 });
+
+app.get('/login', function (req, res, next) {
+  if (req.isAuthenticated()) {
+    res.redirect('/admin/list');
+    return;
+  }
+  next();
+})
 
 // Default to index.html
 app.use(function (req, res) {
