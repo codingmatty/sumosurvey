@@ -1,25 +1,23 @@
 {
-  "db": {
-    "development": {
-      "username": "sumosurvey",
-      "password": "sumosurveypass",
-      "database": "sumosurvey_dev",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
-    },
-    "test": {
-      "username": "root",
-      "password": null,
-      "database": "sumosurvey_test",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
-    },
-    "production": {
-      "username": "b9f9e1b293d314",
-      "password": "2b6b193f",
-      "database": "heroku_4f8fd9bb635c1ec",
-      "host": "us-cdbr-iron-east-04.cleardb.net",
-      "dialect": "mysql"
-    }
+  "development": {
+    "username": "sumosurvey",
+    "password": "sumosurveypass",
+    "database": "sumosurvey_dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "sumosurvey_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "b9f9e1b293d314",
+    "password": "2b6b193f",
+    "database": "heroku_4f8fd9bb635c1ec",
+    "host": "us-cdbr-iron-east-04.cleardb.net",
+    "dialect": "mysql"
   }
 }
