@@ -14,7 +14,6 @@
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
-    // These REALLY SHOULD NOT BE IN GIT!!!
     "production": {
       "username": "b9f9e1b293d314",
       "password": "2b6b193f",
